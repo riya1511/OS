@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="processMana.js"></script>
+    <title>Process Management</title>
+</head>
+<body>
+    <nav class="nav-bar">
+        <h1>Process Management</h1>
+    </nav>
+    <div class="body">
+        <div class="process-list-container">
+            <table class="table table-bordered" id="tblProcessList">
+                <thead>
+                    <tr>
+                        <th class="col">Process ID</th>
+                        <th class="col">Arrival Time</th>
+                        <th class="col">Burst Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+        
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="input-row row">
+            <div class="input-col col">
+                <input class="form-control mb-2" type="number" min="0" id="processID" placeholder="Process ID" required>
+            </div>
+            <div class="input-col col">
+                <input class="form-control mb-2" type="number" min="0" id="arrivalTime" placeholder="Arrival Time">
+            </div>
+            <div class="input-col col">
+                <input class="form-control mb-2" type="number" min="0" id="burstTime" placeholder="Burst Time">
+            </div>
+            <div class="input-col col">
+                <button class="btn" id="btnAddProcess">Add Process</button>
+            </div>
+        </div>
+        <div class="calculate">
+            <div>
+                <label for="algorithmSelector">Select Scheduling Method</label>
+                <select class="form-control" id="algorithmSelector">
+                    <option value="optFCFS">First Come First Served</option>
+                    <option value="optSJF">Shortest Job First</option>
+                    <option value="optSRTF">Shortest Remaining Time First</option>
+                    <option value="optRR">Round Robin</option>
+                </select>
+            </div>
+            <div>
+                <label class="mt-1 ">Time Quantum :</label>
+                <input class="form-control mb-2" type="number" min="0" max="9" id="timeQuantum" >
+            </div>
+            <div>
+                <button class="btn" id="btnCalculate">Calculate</button>
+            </div>
+        </div>
+        <div class="resultant-table">
+            <table class="table table-bordered" id="tblResults">
+                <thead>
+                    <tr>
+                        <th class="col">Process ID</th>
+                        <th class="col">Arrival Time</th>
+                        <th class="col">Burst Time</th>
+                        <th class="col">Completed Time</th>
+                        <th class="col">Waiting Time</th>
+                        <th class="col">Turnaround Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                </tbody>
+            </table>
+        </div>
+        <div class="gantt-chart">
+            <table class="table table-bordered" id="gantt-chart">
+                <tr id="gantt-id">
+                    <th class="col">Process ID</th>
+                </tr>
+                <tr id="gantt-time">
+                    <th class="col">Completion Time</th>
+                </tr>
+                 <!-- <thead>
+                    <tr>
+                    </tr>
+                </thead>  -->
+                <!-- <tbody> </tbody> -->
+            </table>
+        </div>
+        <div class="result">
+            <div class="form-group">
+                <label for="avgTurnaroundTime">Average Turnaround Time</label>
+                <input class="form-control" id="avgTurnaroundTime" type="number" placeholder="0" disabled>
+            </div>
+            <div class="form-group">
+                <label for="avgTurnaroundTime">Average Waiting Time</label>
+                <input class="form-control" id="avgWaitingTime" type="number" placeholder="0" disabled>
+            </div>
+            <div class="form-group">
+                <label for="avgTurnaroundTime">Throughput</label>
+                <input class="form-control" id="throughput" type="number" placeholder="0" disabled>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

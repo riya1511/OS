@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Karla:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Linux Basic Commands</title>
+</head>
+<body>
+    <nav class="nav-bar">
+        <h1>Basic Linux Commands</h1>
+    </nav>
+    <div class="main-two">
+        <button class="command-btn" id="link1">ls</button>
+        <button class="command-btn" id="link2">top</button>
+        <button class="command-btn" id="link3">mkdir</button>
+        <button class="command-btn" id="link4">rm</button>
+        <button class="command-btn" id="link5">rmdir</button>
+        <button class="command-btn" id="link6">chmod</button>
+        <button class="command-btn" id="link7">cp</button>
+        <button class="command-btn" id="link8">cd</button>
+        <button class="command-btn" id="link9">pwd</button>
+        <button class="command-btn" id="link10">cat</button>
+        <button class="command-btn" id="link11">mv</button>
+        <button class="command-btn" id="link12">find</button>
+        <!-- <button class="command-btn" id="link13">du</button> -->
+        <button class="command-btn" id="link14">kill</button>
+        <button class="command-btn" id="link15">chown</button>
+        <button class="command-btn" id="link16">tar</button>
+        <button class="command-btn" id="link17">sudo</button>
+    </div>
+    <div class="modal" id="ls">
+        <div class="header">
+            <div class="title">ls</div>
+        </div>
+        <div class="body">
+            ls is a Linux shell command that lists directory contents of files and directories.Some practical examples of ls command are shown below:
+            <ul>
+                <li>Open Last Edited File Using <span>ls -t</span></li>
+                <li>Display One File Per Line Using <span>ls -1</span></li>
+                <li>Display All Information About Files/Directories Using <span>ls -l</span></li>
+                <li>Order Files Based on Last Modified Time Using <span>ls -lt</span></li>
+                <li>Display Hidden Files Using <span>ls -a</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal" id="top">
+        <div class="header">
+            <div class="title">top</div>
+        </div>
+        <div class="body">
+            <p>top command is used to show the Linux processes. It provides a dynamic real-time view of the running system. Usually, this command shows the summary information of the system and the list of processes or threads which are currently managed by the Linux Kernel.</p>
+            <p>As soon as you will run this command it will open an interactive command mode where the top half portion will contain the statistics of processes and resource usage. And Lower half contains a list of the currently running processes. Pressing <span>q</span> will simply exit the command mode.</p>
+        </div>
+    </div>
+    <div class="modal" id="mkdir">
+        <div class="header">
+            <div class="title">mkdir</div>
+        </div>
+        <div class="body">
+            <p>mkdir command in Linux allows the user to create directories (also referred to as folders in some operating systems ). This command can create multiple directories at once as well as set the permissions for the directories.</p>
+            <p>Syntax: </p>
+            <span>mkdir [options...] [directories ...]</span>
+        </div>
+    </div>
+    <div class="modal" id="rm">
+        <div class="header">
+            <div class="title">rm</div>
+        </div>
+        <div class="body">
+            <p>rm stands for remove here. rm command is used to remove objects such as files, directories, symbolic links and so on from the file system like UNIX. To be more precise, rm removes references to objects from the filesystem, where those objects might have had multiple references (for example, a file with two different names). <span>By default, it does not remove directories.</span></p>
+            <p>This command normally works silently and you should be very careful while running rm command because once you delete the files then you are not able to recover the contents of files and directories.</p>
+            <p>Syntax: </p>
+            <span>rm [OPTION]... FILE...</span>
+        </div>
+    </div>
+    <div class="modal" id="rmdir">
+        <div class="header">
+            <div class="title">rmdir</div>
+        </div>
+        <div class="body">
+            <p>rmdir command is used remove empty directories from the filesystem in Linux. The rmdir command removes each and every directory specified in the command line only if these directories are empty. So if the specified directory has some directories or files in it then this cannot be removed by rmdir command.</p>
+            <p>Syntax: </p>
+            <span>rmdir [-p] [-v | –verbose] [–ignore-fail-on-non-empty] directories …</span>
+            <p>Options:</p>
+            <ul>
+                <li>–help: It will print the general syntax of the command along with the various options that can be used with the rmdir command as well as give a brief description about each option.</li>
+                <li>rmdir -p: In this option each of the directory argument is treated as a pathname of which all components will be removed, if they are already empty, starting from the last component.</li>
+                <li>rmdir -v, –verbose: This option displays verbose information for every directory being processed.</li>
+                <li>rmdir –ignore-fail-on-non-empty: This option do not report a failure which occurs solely because a directory is non-empty. Normally, when rmdir is being instructed to remove a non-empty directory, it simply reports an error. This option consists of all those error messages.</li>
+                <li>rmdir –version: This option is used to display the version information and exit.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal" id="chmod">
+        <div class="header">
+            <div class="title">chmod</div>
+        </div>
+        <div class="body">
+            <p>In Unix-like operating systems, the chmod command is used to change the access mode of a file.
+                The name is an abbreviation of change mode.</p>
+            <p>Syntax: </p>
+            <span>chmod [reference][operator][mode] file... </span>
+            <p>The references are used to distinguish the users to whom the permissions apply i.e. they are list of letters that specifies whom to give permissions.</p>
+            <table>
+                <tr>
+                    <th>Reference</th>
+                    <th>Class</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>u</td>
+                    <td>Owner</td>
+                    <td>File's owner</td>
+                </tr>
+                <tr>
+                    <td>g</td>
+                    <td>Group</td>
+                    <td>users who are members of the file's group</td>
+                </tr>
+                <tr>
+                    <td>o</td>
+                    <td>Others</td>
+                    <td>users who are neither the file's owner nor members of the file's group</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>All</td>
+                    <td>All three of the above, same as ugo</td>
+                </tr>
+            </table>
+            <p>The operator is used to specify how the modes of a file should be adjusted. The following operators are accepted:</p>
+            <table>
+                <tr>
+                    <th>Operator</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>+</td>
+                    <td>Adds the specified modes to the specified classes</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Removes the specified modes from the specified classes</td>
+                </tr>
+                <tr>
+                    <td>=</td>
+                    <td>The modes specified are to be made the exact modes for the specified classes</td>
+                </tr>
+            </table>
+            <p>There are three basic modes which correspond to the basic permissions:</p>
+            <table>
+                <tr>
+                    <td>r</td>
+                    <td>Permission to read the file.</td>
+                </tr>
+                <tr>
+                    <td>w</td>
+                    <td>Permission to write (or delete) the file.</td>
+                </tr>
+                <tr>
+                    <td>x</td>
+                    <td>Permission to execute the file, or, in the case of a directory, search it.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="modal" id="cp">
+        <div class="header">
+            <div class="title">cp</div>
+        </div>
+        <div class="body">
+            <p>cp stands for copy. This command is used to copy files or group of files or directory. It creates an exact image of a file on a disk with different file name. cp command require at least two filenames in its arguments.</p>
+            <p>Syntax: </p>
+            <span>cp [OPTION] Source Destination
+                cp [OPTION] Source Directory
+                cp [OPTION] Source-1 Source-2 Source-3 Source-n Directory</span>
+        </div>
+    </div>
+    <div class="modal" id="cd">
+        <div class="header">
+            <div class="title">cd</div>
+        </div>
+        <div class="body">
+            <p>cd command in linux known as change directory command. It is used to change current working directory. </p>
+            <p>Syntax: </p>
+            <span>$ cd [directory]</span>
+            <ul>
+                <li>To move inside a subdirectory : <span>$ cd [directory_name]</span></li>
+                <li><span>cd /:</span> this command is used to change directory to the root directory, The root directory is the first directory in your filesystem hierarchy.</li>
+                <li><span>cd ~ :</span> this command is used to change directory to the home directory. </li>
+                <li><span>cd "dirname" :</span> This command is used to navigate to a directory with white spaces.Instead of using double quotes we can use single quotes then also this command will work. </li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal" id="pwd">
+        <div class="header">
+            <div class="title">pwd</div>
+        </div>
+        <div class="body">
+            <p>pwd stands for Print Working Directory. It prints the path of the working directory, starting from the root.
+                pwd is shell built-in command(pwd) or an actual binary(/bin/pwd).
+                $PWD is an environment variable which stores the path of the current directory.
+                This command has two flags. </p>
+            <ul>
+                <li>pwd -L: Prints the symbolic path.</li>
+                <li>pwd -P: Prints the actual path.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal" id="cat">
+        <div class="header">
+            <div class="title">cat</div>
+        </div>
+        <div class="body">
+            <p>Cat(concatenate) command is very frequently used in Linux. It reads data from the file and gives their content as output. It helps us to create, view, concatenate files. So let us see some frequently used cat commands. </p>
+            <ul>
+                <li>To view a single file <span>$cat filename</span></li>
+                <li>To view a multiple file <span>$cat file1 file2</span></li>
+                <li>To view contents of a file preceding with line numbers.  <span>$cat -n filename</span></li>
+                <li>Create a file <span>$ cat > newfile</span></li>
+                <li>Copy the contents of one file to another file. <span>$cat [filename-whose-contents-is-to-be-copied] > [destination-filename]</span></li>
+                <li>Cat command can suppress repeated empty lines in output <span>$cat -s geeks.txt</span></li>
+                <li>Cat command can append the contents of one file to the end of another file. <span>$cat file1 >> file2</span></li>
+                <li> Cat command can display content in reverse order using tac command. <span>$cat filename</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal" id="mv">
+        <div class="header">
+            <div class="title">mv</div>
+        </div>
+        <div class="body">
+            <p>mv stands for move. mv is used to move one or more files or directories from one place to another in a file system like UNIX. It has two distinct functions: </p>
+            <ul>
+                <li>It renames a file or folder.</li>
+                <li>It moves a group of files to a different directory.</li>
+            </ul>
+            <p>No additional space is consumed on a disk during renaming. This command normally works silently means no prompt for confirmation.</p>
+            <p>Syntax: </p>
+            <span>mv [Option] source destination</span>
+        </div>
+    </div>
+    <div class="modal" id="find">
+        <div class="header">
+            <div class="title">find</div>
+        </div>
+        <div class="body">
+            <p>The find command in UNIX is a command line utility for walking a file hierarchy. It can be used to find files and directories and perform subsequent operations on them. It supports searching by file, folder, name, creation date, modification date, owner and permissions. By using the ‘-exec’ other UNIX commands can be executed on files or folders found.</p>
+            <p>Syntax: </p>
+            <span>$ find [where to start searching from]
+                [expression determines what to find] [-options] [what to find]</span>
+        </div>
+    </div>
+    <div class="modal" id="modal">
+        <div class="header">
+            <div class="title">du</div>
+        </div>
+        <div class="body">
+            <p>du command, short for disk usage, is used to estimate file space usage.
+                The du command can be used to track the files and directories which are consuming excessive amount of space on hard disk drive.</p>
+            <p>Syntax:</p>
+            <span>du [OPTION]... [FILE]...
+                du [OPTION]... --files0-from=F</span>
+            <p>Options:</p>
+            <table>
+                <tr>
+                    <td>-0, –null</td>
+                    <td>end each output line with NULL</td>
+                </tr>
+                <tr>
+                    <td>-a, –all</td>
+                    <td>write count of all files, not just directories</td>
+                </tr>
+                <tr>
+                    <td>–apparent-size </td>
+                    <td>print apparent sizes, rather than disk usage.</td>
+                </tr>
+                <tr>
+                    <td>-B, –block-size=SIZE </td>
+                    <td>scale sizes to SIZE before printing on console</td>
+                </tr>
+                <tr>
+                    <td>-c, –total</td>
+                    <td>produce grand total</td>
+                </tr>
+                <tr>
+                    <td>-d, –max-depth=N </td>
+                    <td>print total for directory only if it is N or fewer levels below command line argument</td>
+                </tr>
+                <tr>
+                    <td>-h, –human-readable</td>
+                    <td>print sizes in human readable format</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <div class="modal" id="kill">
+        <div class="header">
+            <div class="title">kill</div>
+        </div>
+        <div class="body">
+            <p>kill command in Linux (located in /bin/kill), is a built-in command which is used to terminate processes manually. kill command sends a signal to a process which terminates the process. If the user doesn’t specify any signal which is to be sent along with kill command then default TERM signal is sent that terminates the process.</p>
+            <p>Options:</p>
+            <table>
+                <tr>
+                    <td>kill -l</td>
+                    <td>To display all the available signals you can use below command option:</td>
+                </tr>
+                <tr>
+                    <td>kill pid</td>
+                    <td>To show how to use a PID with the kill command.</td>
+                </tr>
+                <tr>
+                    <td>kill -s</td>
+                    <td>To show how to send signal to processes.</td>
+                </tr>
+                <tr>
+                    <td>kill -L</td>
+                    <td>This command is used to list available signals in a table format.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="modal" id="chown">
+        <div class="header">
+            <div class="title">chown</div>
+        </div>
+        <div class="body">
+            <p>chown command is used to change the file Owner or group. Whenever you want to change ownership you can use chown command.</p>
+            <p>Syntax:</p>
+            <span>chown [OPTION]… [OWNER][:[GROUP]] FILE…
+                chown [OPTION]… –reference=RFILE FILE…</span>
+            <p>Options:</p>
+            <table>
+                <tr>
+                    <td>-c</td>
+                    <td>Reports when a file change is made.</td>
+                </tr>
+                <tr>
+                    <td>-v</td>
+                    <td>It is used to show the verbose information for every file processed.</td>
+                </tr>
+                <tr>
+                    <td>-f</td>
+                    <td>It suppresses most of the error messages. When you are not permitted to change group permissions and shows error, this option forcefully/silently changes the ownership.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="modal" id="tar">
+        <div class="header">
+            <div class="title">tar</div>
+        </div>
+        <div class="body">
+            The Linux ‘tar’ stands for tape archive, is used to create Archive and extract the Archive files. tar command in Linux is one of the important command which provides archiving functionality in Linux. We can use Linux tar command to create compressed or uncompressed Archive files and also maintain and modify them. 
+            <p>Syntax:</p>
+            <span>tar [options] [archive-file] [file or directory to be archived]</span>
+            <p>Options:</p>
+            <table>
+                <tr>
+                    <td>-c</td>
+                    <td>Create Archives</td>
+                </tr>
+                <tr>
+                    <td>-x</td>
+                    <td>Extract the archive</td>
+                </tr>
+                <tr>
+                    <td>-f</td>
+                    <td>creates archive with the given filename</td>
+                </tr>
+                <tr>
+                    <td>-t</td>
+                    <td>lists files in archived file</td>
+                </tr>
+                <tr>
+                    <td>-u</td>
+                    <td>archives and adds to an existing archive file </td>
+                </tr>
+                <tr>
+                    <td>-v</td>
+                    <td>Displays Verbose Information </td>
+                </tr>
+                <tr>
+                    <td>-A</td>
+                    <td>Concatenates the archive files </td>
+                </tr>
+                <tr>
+                    <td>-z</td>
+                    <td>zip, tells tar command that creates tar file using gzip </td>
+                </tr>
+                <tr>
+                    <td>-j</td>
+                    <td>filter archive tar file using tbzip </td>
+                </tr>
+                <tr>
+                    <td>-W</td>
+                    <td> Verify a archive file </td>
+                </tr>
+                <tr>
+                    <td>-r</td>
+                    <td>update or add file or directory in already existed .tar file </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="modal" id="sudo">
+        <div class="header">
+            <div class="title">sudo</div>
+        </div>
+        <div class="body">
+            Providing root access to all users is not a good practice. Nonetheless, normal users might need to execute some commands as superuser occasionally. This is where the sudo (Super User DO) access comes into the picture. The sudo command provides an efficient way to grant users the special rights to execute commands at the system (root) level. With sudo, we’ll be able to execute administrative tasks without switching users 
+        </div>
+    </div>
+</div>
+</div>
+<div class="credentials">
+    <center>
+        <b>CentOS Linux 7 (Core)</b>
+        </center>
+        <br>
+        <br>
+        Use the following credentials for logging in:<br>
+        <br>Username: <b>onlineCoder</b><br>
+        Password: <b>password1511</b>
+    </p>
+<button onclick="terminalhide()" id="labbutton" class="button">Close terminal</button>
+
+</div>
+<div id="terminal" class="row" style="z-index: -1; bottom: 0px; width: 100%; height: 0px; display: block;">
+<iframe id="termframe" src="https://www.webminal.org/terminal/proxy/index/" style="width: 100%; height: 400px; background-color: #FFFFFF;"></iframe>
+</div>
+
+<script>
+     function terminalhide() {
+          var x = document.getElementById("terminal");
+           if(x.style.display === 'none'){
+            x.style.display = 'block'
+        }else{
+            x.style.display = 'none'
+        }
+    }
+ </script>
+
+    <script src="index.js"></script>
+</body>
+</html>
