@@ -10,7 +10,7 @@ representations.
 ## How to run the Project
 
 The project is live on the web and the link is:
-https://62dbd8d95aa35c0182cb64ee--admirable-custard-e3d858.netlify.app/
+https://riya1511.github.io/OS/
 
 ## How it works
 
